@@ -36,12 +36,19 @@ public class Cat {
         nose = new Nose("some food");
         tail = new Tail("Fluffy");
     }
-
+    public String getFullCat(){
+        String cat = getCatStringValue();
+        cat = getAdditionalInfo(cat);
+        return cat;
+    }
     private String getCatStringValue(){
-        String result = "My name is: " + name +" my age is: " + age + " my skin color is: " + color;
+        String result = "My name is: " + name +"\nMy age is: " + age + "\nMy skin color is: " + color;
         return result;
     }
-    private String getAdditionalInfo(){
-        return null;
+    private String getAdditionalInfo(String result){
+
+        result = result + "\nMy tail is: " + tail.getType();
+        result = result + "\nMy nose smells: " + nose.getSmell();
+        return result;
     }
 }

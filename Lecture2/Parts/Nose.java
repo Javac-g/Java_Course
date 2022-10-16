@@ -13,4 +13,11 @@ public class Nose {
     public void sniff(){
         System.out.println("I smelling " + smell + " now");
     }
+
+    @Override
+    public String toString() {
+        return "Nose{" +
+                "smell='" + smell + '\'' +
+                '}';
+    }
 }
