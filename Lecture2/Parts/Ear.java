@@ -1,7 +1,7 @@
 package Lecture2.Parts;
 
 public class Ear {
-    private String sound = "silence"; //'Hello  darkness my old friend' :);
+    private String sound;
     public Ear(String sound){
         this.sound = sound;
     }

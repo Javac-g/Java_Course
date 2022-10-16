@@ -1,7 +1,7 @@
 package Lecture2.Parts;
 
 public class Nose {
-    private String smell = "nothing";
+    private String smell;
     public Nose(String smell){
         this.smell = smell;
     }

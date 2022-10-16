@@ -1,7 +1,7 @@
 package Lecture2.Parts;
 
 public class Eye {
-    private String  picture = "dreams";
+    private String  picture;
     public Eye(String picture){
         this.picture = picture;
     }
