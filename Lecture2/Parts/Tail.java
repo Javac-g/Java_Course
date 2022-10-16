@@ -1,19 +1,16 @@
-package Lecture3.catparts;
+package Lecture2.Parts;
 
-public class Leg {
+public class Tail {
     private String type;
 
-    public Leg(String type) {
+    public Tail(String type) {
         this.type = type;
     }
-
     public void move(){
-        System.out.println("Move : " + type + " Leg");
+        System.out.println("I moving my " +  type + " tail");
     }
 
     public String getType() {
         return type;
     }
-
-
 }
