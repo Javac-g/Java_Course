@@ -1,11 +1,12 @@
 package Lecture2.Full;
 
 import Lecture2.Parts.Cats;
+import Lecture2.Parts.Mane;
 
 public class Lion extends Cats {
-    private String mane;
+    private Mane mane;
 
-    public Lion(String mane,String color, String name, int age) {
+    public Lion(Mane mane,String color, String name, int age) {
         super(name,color,age);
         this.mane = mane;
     }
