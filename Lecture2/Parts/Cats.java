@@ -36,12 +36,12 @@ public class Cats {
         return cat;
     }
     protected String getCatStringValue(){
-        return "My name is: " + name +"\nMy age is: " + age + "\nMy skin color is: " + color;
+        return " My name is: " + name +" My age is: " + age + " My skin color is: " + color;
     }
     protected String getAdditionalInfo(String result){
 
-        result = result + "\nMy tail is: " + tail.getType();
-        result = result + "\nMy nose smells: " + nose.getSmell();
+        result = result + " My tail is: " + tail.getType();
+        result = result + " My nose smells: " + nose.getSmell();
         return result;
     }
 
