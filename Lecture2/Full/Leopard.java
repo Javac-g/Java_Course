@@ -9,4 +9,19 @@ public class Leopard extends Cats {
         super(color, name, age);
         this.dots = dots;
     }
+
+    @Override
+    public String getFullCat() {
+
+    }
+
+    @Override
+    protected String getCatStringValue() {
+        return super.getCatStringValue();
+    }
+
+    @Override
+    protected String getAdditionalInfo(String result) {
+        return super.getAdditionalInfo(result);
+    }
 }

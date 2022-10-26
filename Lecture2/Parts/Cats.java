@@ -35,10 +35,10 @@ public class Cats {
         cat = getAdditionalInfo(cat);
         return cat;
     }
-    private String getCatStringValue(){
+    protected String getCatStringValue(){
         return "My name is: " + name +"\nMy age is: " + age + "\nMy skin color is: " + color;
     }
-    private String getAdditionalInfo(String result){
+    protected String getAdditionalInfo(String result){
 
         result = result + "\nMy tail is: " + tail.getType();
         result = result + "\nMy nose smells: " + nose.getSmell();
