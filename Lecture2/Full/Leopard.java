@@ -19,14 +19,12 @@ public class Leopard extends Cats {
 
     @Override
     protected String getCatStringValue() {
-        return " My name is: " + name +" My age is: " + age + " My skin color is: " + color;
+        return super.getCatStringValue();
     }
 
     @Override
     protected String getAdditionalInfo(String result) {
-        result = result + " My tail is: " + tail.getType();
-        result = result + " My nose smells: " + nose.getSmell();
-        result = result + " My Dots: " + dots;
+        result = super.getAdditionalInfo(result) + " My Dots: " + dots;
         return result;
     }
 }

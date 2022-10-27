@@ -19,14 +19,12 @@ public class Lion extends Cats {
 
     @Override
     protected String getCatStringValue() {
-        return " My name is: " + name +" My age is: " + age + " My skin color is: " + color;
+        return super.getCatStringValue();
     }
 
     @Override
     protected String getAdditionalInfo(String result) {
-        result = result + " My tail is: " + tail.getType();
-        result = result + " My nose smells: " + nose.getSmell();
-        result = result + " My Mane: " + mane ;
+        result = super.getAdditionalInfo(result) + " My Mane: " + mane ;
         return result;
     }
 }
