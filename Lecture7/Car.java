@@ -2,14 +2,16 @@ package Lecture7;
 
 public class Car {
     protected String type,company ;
-    protected int doorCount;
-    protected double price;
+    protected int doorCount,price;
+    protected double vol;
+    protected Engine engine;
 
-    public Car(String type, String company, int doorCount, double price) {
-        type = type;
-        company = company;
+    public Car(String type, String company, int doorCount,int price) {
+        this.type = type;
+        this.company = company;
         this.doorCount = doorCount;
         this.price = price;
+
     }
 
     public void setType(String type) {
@@ -24,7 +26,7 @@ public class Car {
         this.doorCount = doorCount;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
 
     }
