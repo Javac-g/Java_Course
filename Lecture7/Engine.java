@@ -9,6 +9,6 @@ public class Engine {
     }
 
     public String getType() {
-        return "Engine: "+ type;
+        return  type;
     }
 }
