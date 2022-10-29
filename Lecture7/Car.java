@@ -1,6 +1,6 @@
 package Lecture7;
 
-public class Car {
+public abstract class Car  {
     protected String type,company ;
     protected int doorCount,price;
 
@@ -40,11 +40,7 @@ public class Car {
         this.engine = engine;
     }
     //Getter,Setter area end
-    protected void userGuide(){
-
-
-
-    }
+    protected abstract void userGuide();
 
     //Methods Area end
 }
