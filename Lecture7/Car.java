@@ -16,11 +16,11 @@ public class Car {
 
     //Constructors area end
     public void setType(String type) {
-        type = type;
+        this.type = type;
     }
 
     public void setCompany(String company) {
-        company = company;
+        this.company = company;
     }
 
     public void setDoorCount(int doorCount) {
@@ -40,12 +40,8 @@ public class Car {
         this.engine = engine;
     }
     //Getter,Setter area end
-    private void startCar(){
+    protected void userGuide(){
 
-        System.out.println("My car type is: " + this.type);
-        System.out.println("My car company is: " + this.company);
-        System.out.println("My car costs: " + this.price);
-        System.out.println("My car has " + this.doorCount + " doors");
 
 
     }
