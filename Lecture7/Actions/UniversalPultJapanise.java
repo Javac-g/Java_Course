@@ -1,28 +1,28 @@
 package Lecture7.Actions;
 
-public class UniversalPultChinise {
+public class UniversalPultJapanise {
 
     public void turnOnAirCond(){
         AirCond airCond = new AirCond();
-        System.out.println("User push AC  power button");
+        System.out.println("くぇ　ムシシ");
         airCond.startAirCond();
 
     }
     public void turnOnTv(){
         Tv tv = new Tv();
-        System.out.println("User push TV  power button");
+        System.out.println("手ぇ");
         tv.startTv();
 
     }
 
     public void turnOnWifiStove(){
         WifiStove wifiStove = new WifiStove();
-        System.out.println("User push Wifi Stove  power button");
+        System.out.println("子供");
         wifiStove.startWifiStove();
     }
     public void turnOnSmartFridge(){
         SmartFridge smartFridge = new SmartFridge();
-        System.out.println("User push Smart Fridge  power button");
+        System.out.println("オジサ");
         smartFridge.startFridge();
 
     }

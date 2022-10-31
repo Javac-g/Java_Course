@@ -9,19 +9,19 @@ public class UniversalPultUkrain {
     }
     public void turnOnTv(){
         Tv tv = new Tv();
-        System.out.println("User push TV  power button");
+        System.out.println("Користувач запускае телевізор");
         tv.startTv();
 
     }
 
     public void turnOnWifiStove(){
         WifiStove wifiStove = new WifiStove();
-        System.out.println("User push Wifi Stove  power button");
+        System.out.println("Користувач запускае Вайфай піч");
         wifiStove.startWifiStove();
     }
     public void turnOnSmartFridge(){
         SmartFridge smartFridge = new SmartFridge();
-        System.out.println("User push Smart Fridge  power button");
+        System.out.println("Користувач запускае розумний холодильник");
         smartFridge.startFridge();
 
     }
