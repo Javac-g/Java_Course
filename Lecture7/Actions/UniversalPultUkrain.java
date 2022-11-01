@@ -3,7 +3,7 @@ package Lecture7.Actions;
 public class UniversalPultUkrain {
     public void turnOnAirCond(){
         AirCond airCond = new AirCond();
-        System.out.println("User push AC  power button");
+        System.out.println("Користувач запускае кондиціонер");
         airCond.startAirCond();
 
     }

@@ -13,4 +13,16 @@ public class UserLect {
         Random random = new Random();
         return random.nextInt(3);
     }
+
+    public UniversalPultUkrain getUniversalPultUkrain() {
+        return universalPultUkrain;
+    }
+
+    public UniversalPultUSA getUniversalPultUSA() {
+        return universalPultUSA;
+    }
+
+    public UniversalPultJapanise getUniversalPultJapanise() {
+        return universalPultJapanise;
+    }
 }
