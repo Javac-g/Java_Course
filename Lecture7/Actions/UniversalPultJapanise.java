@@ -28,4 +28,9 @@ public class UniversalPultJapanise implements Pult{
         smartFridge.startFridge();
 
     }
+
+    @Override
+    public void a() {
+
+    }
 }

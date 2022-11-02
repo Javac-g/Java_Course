@@ -1,6 +1,6 @@
 package Lecture7.Actions;
 
-public interface Pult {
+public interface Pult extends SomePult {
     void turnOnAirCond();
     void turnOnSmartFridge();
     void turnOnWifiStove();
