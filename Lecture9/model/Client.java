@@ -2,6 +2,7 @@ package Lecture9.model;
 
 import Lecture9.model.enums.VACCINATIONS;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
@@ -9,6 +10,11 @@ public class Client {
     protected String firstName,middleName,lastName;
     protected String ibanNumber;
     protected List<VACCINATIONS> vaccinations;
+    List<Order> orders = new ArrayList<>();
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 
     public Client(Long number, String firstName, String middleName, String lastName, String ibanNumber, List<VACCINATIONS> vaccinations) {
         this.number = number;

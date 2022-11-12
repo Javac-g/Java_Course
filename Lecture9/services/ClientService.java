@@ -1,6 +1,7 @@
 package Lecture9.services;
 
 import Lecture9.model.Client;
+import Lecture9.model.Order;
 import Lecture9.model.enums.VACCINATIONS;
 
 import java.util.ArrayList;
@@ -15,6 +16,10 @@ public class ClientService {
         Client client = new Client(number,firstName,lastName,middleName,ibanNumber,vaccinations);
         clients.add(client);
         return client;
+    }
+    public boolean addTourToClient(Long tourNumber,Long ClientNumber){
+        Order order = new Order();
+        order
     }
 
 

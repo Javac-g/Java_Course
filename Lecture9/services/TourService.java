@@ -9,6 +9,14 @@ import java.util.List;
 
 public class TourService {
     private static  final List<Tour> tours = new ArrayList<>();
+    public Tour findTourByNumber(Long number){
+        for (Tour tour:tours ){
+            if (tour.getNumber().equals(number)){
+                return tour;
+            }
+        }
+        return null;
+    }
     public Tour addTour(Long number, COUNTRIES from,
                         COUNTRIES where, int cost,
                         boolean nutrition, boolean excursion,
