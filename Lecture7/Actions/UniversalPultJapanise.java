@@ -1,6 +1,6 @@
 package Lecture7.Actions;
 
-public class UniversalPultJapanise implements Pult{
+public final class UniversalPultJapanise implements Pult{
     @Override
     public void turnOnAirCond(){
         AirCond airCond = new AirCond();
