@@ -13,7 +13,10 @@ public class Tour {
     private byte daysAmount;
     private List<VACCINATIONS> vaccinations;
 
-    public Tour(Long number, COUNTRIES from, COUNTRIES where, int cost, boolean nutrition, boolean excursion, byte daysAmount, List<VACCINATIONS> vaccinations) {
+    public Tour(Long number, COUNTRIES from,
+                COUNTRIES where, int cost,
+                boolean nutrition, boolean excursion,
+                byte daysAmount, List<VACCINATIONS> vaccinations) {
         this.number = number;
         this.from = from;
         this.where = where;
