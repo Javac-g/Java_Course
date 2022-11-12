@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientService {
+    private TourService tourService = new TourService();
+    private static int orderCounter = 0;
     private static final List<Client> clients = new ArrayList<>();
     public Client addClient(Long number, String firstName, String middleName,
                             String lastName, String ibanNumber,
@@ -17,9 +19,28 @@ public class ClientService {
         clients.add(client);
         return client;
     }
-    public boolean addTourToClient(Long tourNumber,Long ClientNumber){
-        Order order = new Order();
-        order
+    private Client findByClientNumber(Long number){
+        for(Client client: clients){
+            if (client.getNumber().equals(number)){
+                return client;
+            }
+        }
+        return null;
+    }
+    public boolean addTourToClient(Long tourNumber,Long clientNumber) {
+        Order order = new Order(tourService.findTourByNumber(tourNumber));
+
+        Client client = findByClientNumber(clientNumber);
+        if (client != null){
+            client.getOrders().add(order);
+            order.setOrderNumber(orderCounter);
+            orderCounter++;
+
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
 
