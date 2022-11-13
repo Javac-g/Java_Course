@@ -11,10 +11,12 @@ public class ViewHelper {
         System.out.println("4 - Exit");
 
     }
-    public static String readString(){
+    public static String readString(String msg){
+        System.out.println("Enter " + msg);
         return scanner.next();
     }
-    public static int readNumber(){
+    public static int readNumber(String msg){
+        System.out.println("Enter " + msg);
         return scanner.nextInt();
     }
     public static void printMSG(String msg){

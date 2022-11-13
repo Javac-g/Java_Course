@@ -10,18 +10,20 @@ import java.util.List;
 public class ClientService {
     private TourService tourService = new TourService();
     private static int orderCounter = 0;
+    private static long clientCounter = 0;
     private static final List<Client> clients = new ArrayList<>();
 
     public ClientService(TourService tourService) {
         this.tourService = tourService;
     }
 
-    public Client addClient(Long number, String firstName, String middleName,
+    public Client addClient(String firstName, String middleName,
                             String lastName, String ibanNumber,
                             List<VACCINATIONS> vaccinations){
 
-        Client client = new Client(number,firstName,lastName,middleName,ibanNumber,vaccinations);
+        Client client = new Client(clientCounter,firstName,lastName,middleName,ibanNumber,vaccinations);
         clients.add(client);
+        clientCounter++;
         return client;
     }
     private Client findByClientNumber(Long number){
