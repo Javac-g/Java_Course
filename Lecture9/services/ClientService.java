@@ -11,6 +11,11 @@ public class ClientService {
     private TourService tourService = new TourService();
     private static int orderCounter = 0;
     private static final List<Client> clients = new ArrayList<>();
+
+    public ClientService(TourService tourService) {
+        this.tourService = tourService;
+    }
+
     public Client addClient(Long number, String firstName, String middleName,
                             String lastName, String ibanNumber,
                             List<VACCINATIONS> vaccinations){
