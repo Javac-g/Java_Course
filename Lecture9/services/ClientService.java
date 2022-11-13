@@ -6,6 +6,7 @@ import Lecture9.model.enums.VACCINATIONS;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ClientService {
     private TourService tourService = new TourService();
@@ -19,7 +20,7 @@ public class ClientService {
 
     public Client addClient(String firstName, String middleName,
                             String lastName, String ibanNumber,
-                            List<VACCINATIONS> vaccinations){
+                            Set<VACCINATIONS> vaccinations){
 
         Client client = new Client(clientCounter,firstName,lastName,middleName,ibanNumber,vaccinations);
         clients.add(client);

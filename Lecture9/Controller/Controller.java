@@ -11,19 +11,19 @@ import java.util.List;
 import java.util.Set;
 
 public class Controller {
-    private static TourService tourService = new TourService();
-    private static ClientService clientService = new ClientService(tourService);
+    private static final TourService tourService = new TourService();
+    private static final ClientService clientService = new ClientService(tourService);
 
     public static void main(String...args){
         while (true){
             ViewHelper.printMenu();
-            int i = ViewHelper.readNumber();
+            int i = ViewHelper.readNumber("Menu choose: ");
            if(!executeCommand(i)){
                break;
            }
         }
     }
-    private Set<VACCINATIONS> chooseVaccinations(){
+    private static Set<VACCINATIONS> chooseVaccinations(){
         Set<VACCINATIONS> vaccinations = new HashSet<>();
         ViewHelper.printMSG("Enter exiting vaccinations from list o exit to end");
         for (VACCINATIONS vaccinations1 : VACCINATIONS.values()){
@@ -43,17 +43,17 @@ public class Controller {
         boolean ans =
                 switch (command){
             case 1 ->{
-                clientService.addClient(ViewHelper.readNumber("client id"),
+                clientService.addClient(
                                         ViewHelper.readString("client name"),
                                         ViewHelper.readString("client middle name"),
                                         ViewHelper.readString("client last name"),
                                         ViewHelper.readString("client iban"),
-                )
-                 true;
+                                        chooseVaccinations()
+                );
+                yield true;
+
             }
-            case 2 ->{
-                true;
-                    }
+            case 2 -> true;
             case 3 ->{
             yield true;
                     }

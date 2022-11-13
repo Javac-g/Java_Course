@@ -4,19 +4,20 @@ import Lecture9.model.enums.VACCINATIONS;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Client {
     protected Long number;
     protected String firstName,middleName,lastName;
     protected String ibanNumber;
-    protected List<VACCINATIONS> vaccinations;
+    protected Set<VACCINATIONS> vaccinations;
     List<Order> orders = new ArrayList<>();
 
     public List<Order> getOrders() {
         return orders;
     }
 
-    public Client(Long number, String firstName, String middleName, String lastName, String ibanNumber, List<VACCINATIONS> vaccinations) {
+    public Client(Long number, String firstName, String middleName, String lastName, String ibanNumber, Set<VACCINATIONS> vaccinations) {
         this.number = number;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -45,7 +46,7 @@ public class Client {
         return ibanNumber;
     }
 
-    public List<VACCINATIONS> getVaccinations() {
+    public Set<VACCINATIONS> getVaccinations() {
         return vaccinations;
     }
 }
