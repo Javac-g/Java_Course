@@ -41,6 +41,23 @@ public class ClientService {
             return false;
         }
 
+
+    }
+    public boolean dropNumber(long orderNum){
+        int index = -1;
+        for(Client client:clients){
+
+            for(int i = 0; i <  client.getOrders().size();i++){
+                if (client.getOrders().get(i).getOrderNumber()  == orderNum){
+                    index = i;
+                    break;
+                }
+            }if (index != -1){
+                client.getOrders().remove(index);
+                return true;
+            }
+        }
+        return false;
     }
 
 
