@@ -1,6 +1,7 @@
 package Lecture9.Controller;
 
 import Lecture9.View.ViewHelper;
+import Lecture9.model.enums.COUNTRIES;
 import Lecture9.model.enums.VACCINATIONS;
 import Lecture9.services.ClientService;
 import Lecture9.services.TourService;
@@ -53,7 +54,13 @@ public class Controller {
                 yield true;
 
             }
-            case 2 -> true;
+            case 2 -> {
+                ViewHelper.printMSG("Enter from Country: " + COUNTRIES.values());
+                COUNTRIES from = COUNTRIES.valueOf(ViewHelper.readString("Select and type"));
+                COUNTRIES where = COUNTRIES.valueOf(ViewHelper.readString("Select where and type"));
+                int cost = ViewHelper.readNumber("Enter cost: ");
+                tourService.addTour(from,where,cost,)
+            };
             case 3 ->{
             yield true;
                     }

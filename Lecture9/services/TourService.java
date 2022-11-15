@@ -9,6 +9,9 @@ import java.util.List;
 
 public class TourService {
     private static  final List<Tour> tours = new ArrayList<>();
+    private long tourNamber = 0;
+
+
     public Tour findTourByNumber(Long number){
         for (Tour tour:tours ){
             if (tour.getNumber().equals(number)){
@@ -17,13 +20,25 @@ public class TourService {
         }
         return null;
     }
-    public Tour addTour(Long number, COUNTRIES from,
-                        COUNTRIES where, int cost,
-                        boolean nutrition, boolean excursion,
-                        byte daysAmount, List<VACCINATIONS> vaccinations){
-        Tour tour = new Tour(number,from,where,cost
-                ,nutrition,excursion,daysAmount,vaccinations);
+    public Tour addTour( COUNTRIES from,
+                        COUNTRIES where,
+                         int cost,
+                        boolean nutrition,
+                         boolean excursion,
+                        byte daysAmount,
+                         List<VACCINATIONS> vaccinations){
+
+        Tour tour = new Tour(tourNamber,
+                            from,
+                            where,
+                            cost,
+                            nutrition,
+                            excursion,
+                            daysAmount,
+                            vaccinations);
+
         tours.add(tour);
+        tourNamber++;
         return tour;
 
     }

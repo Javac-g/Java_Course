@@ -16,14 +16,13 @@ public class Tour {
     public Tour(Long number, COUNTRIES from,
                 COUNTRIES where, int cost,
                 boolean nutrition, boolean excursion,
-                byte daysAmount, List<VACCINATIONS> vaccinations) {
+                List<VACCINATIONS> vaccinations) {
         this.number = number;
         this.from = from;
         this.where = where;
         this.cost = cost;
         this.nutrition = nutrition;
         this.excursion = excursion;
-        this.daysAmount = daysAmount;
         this.vaccinations = vaccinations;
     }
 
