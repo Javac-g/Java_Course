@@ -59,8 +59,10 @@ public class Controller {
                 COUNTRIES from = COUNTRIES.valueOf(ViewHelper.readString("Select and type"));
                 COUNTRIES where = COUNTRIES.valueOf(ViewHelper.readString("Select where and type"));
                 int cost = ViewHelper.readNumber("Enter cost: ");
-                tourService.addTour(from,where,cost,)
-            };
+                Set<VACCINATIONS> vaccine = chooseVaccinations();
+                tourService.addTour(from,where,cost,vaccine);
+                yield true;
+            }
             case 3 ->{
             yield true;
                     }

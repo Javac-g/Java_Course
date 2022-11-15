@@ -4,6 +4,7 @@ import Lecture9.model.enums.COUNTRIES;
 import Lecture9.model.enums.VACCINATIONS;
 
 import java.util.List;
+import java.util.Set;
 
 public class Tour {
     private Long number;
@@ -11,18 +12,17 @@ public class Tour {
     private int cost;
     private boolean nutrition , excursion;
     private byte daysAmount;
-    private List<VACCINATIONS> vaccinations;
+    private Set<VACCINATIONS> vaccinations;
 
     public Tour(Long number, COUNTRIES from,
                 COUNTRIES where, int cost,
-                boolean nutrition, boolean excursion,
-                List<VACCINATIONS> vaccinations) {
+
+                Set<VACCINATIONS> vaccinations) {
         this.number = number;
         this.from = from;
         this.where = where;
         this.cost = cost;
-        this.nutrition = nutrition;
-        this.excursion = excursion;
+
         this.vaccinations = vaccinations;
     }
 
@@ -50,7 +50,7 @@ public class Tour {
         this.where = where;
     }
 
-    public int getCost() {
+      public int getCost() {
         return cost;
     }
 
@@ -82,11 +82,11 @@ public class Tour {
         this.daysAmount = daysAmount;
     }
 
-    public List<VACCINATIONS> getVaccinations() {
+    public Set<VACCINATIONS> getVaccinations() {
         return vaccinations;
     }
 
-    public void setVaccinations(List<VACCINATIONS> vaccinations) {
+    public void setVaccinations(Set<VACCINATIONS> vaccinations) {
         this.vaccinations = vaccinations;
     }
 

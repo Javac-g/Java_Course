@@ -6,6 +6,7 @@ import Lecture9.model.enums.VACCINATIONS;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class TourService {
     private static  final List<Tour> tours = new ArrayList<>();
@@ -23,18 +24,12 @@ public class TourService {
     public Tour addTour( COUNTRIES from,
                         COUNTRIES where,
                          int cost,
-                        boolean nutrition,
-                         boolean excursion,
-                        byte daysAmount,
-                         List<VACCINATIONS> vaccinations){
+                         Set<VACCINATIONS> vaccinations){
 
         Tour tour = new Tour(tourNamber,
                             from,
                             where,
                             cost,
-                            nutrition,
-                            excursion,
-                            daysAmount,
                             vaccinations);
 
         tours.add(tour);
