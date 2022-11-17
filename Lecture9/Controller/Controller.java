@@ -77,7 +77,7 @@ public class Controller {
                     int tourNum = ViewHelper.readNumber("Enter tour number");
 
                 }
-               clientService.addTourToClient();
+               clientService.addTourToClient(tourN);
             yield true;
                     }
             case 5 -> false;
