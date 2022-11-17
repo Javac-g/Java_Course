@@ -37,7 +37,7 @@ public class ClientService {
         }
         return null;
     }
-    private void makeVip(Client_pattern client){
+    private Client_pattern makeVip(Client_pattern client){
         int number = -1;
         for (int i = 0; i < clients.size(); i++){
             if (client.getNumber() == clients.get(i).getNumber()){
@@ -45,9 +45,11 @@ public class ClientService {
                 break;
             }
         }
+        Client_pattern vipClient = new VipClient(clients.get(number),100);
         if(number != -1){
-            clients.set(number,new VipClient(clients.get(number),100));
+            clients.set(number, vipClient);
         }
+        return vipClient;
     }
     public boolean addTourToClient(Long tourNumber,Long clientNumber,int daysCount,boolean nutrition,boolean excursion) {
         Client_pattern client = findByClientNumber(clientNumber);
@@ -56,13 +58,14 @@ public class ClientService {
         if(!client.getVaccinations().containsAll(tour.getVaccinations())){
             return false;
         };
-        if (client.getOrders().size() >= 3 ){
-            makeVip(client);
+        if (client.getOrders().size() == 3 ){
+           client = makeVip(client);
         }
         Tour tourClone = tour.clone();
         tourClone.setDaysAmount((byte)daysCount);
         tourClone.setNutrition(nutrition);
         tourClone.setExcursion(excursion);
+        tourClone.setFinalCost(tourClone.getFinalCost() - client.getDiscount());
         Order order = new Order(tourClone);
 
 

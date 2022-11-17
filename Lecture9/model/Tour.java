@@ -11,6 +11,7 @@ public class Tour {
     private Long number;
     private COUNTRIES from , where;
     private int cost;
+    private int finalCost;
     private boolean nutrition , excursion;
     private byte daysAmount;
     private Set<VACCINATIONS> vaccinations;
@@ -29,6 +30,10 @@ public class Tour {
 
     public Long getNumber() {
         return number;
+    }
+
+    public void setFinalCost(int finalCost) {
+        this.finalCost = finalCost;
     }
 
     public void setNumber(Long number) {
