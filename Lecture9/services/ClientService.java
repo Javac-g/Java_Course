@@ -1,9 +1,6 @@
 package Lecture9.services;
 
-import Lecture9.model.Client;
-import Lecture9.model.Client_pattern;
-import Lecture9.model.Order;
-import Lecture9.model.Tour;
+import Lecture9.model.*;
 import Lecture9.model.enums.VACCINATIONS;
 
 import java.util.ArrayList;
@@ -32,7 +29,7 @@ public class ClientService {
         clientCounter++;
         return client;
     }
-    private Client_pattern findByClientNumber(Long number){
+    public Client_pattern findByClientNumber(Long number){
         for(Client_pattern client: clients){
             if (client.getNumber().equals(number)){
                 return client;
@@ -49,7 +46,7 @@ public class ClientService {
             }
         }
         if(number != -1){
-            clients.set(number,)
+            clients.set(number,new VipClient(clients.get(number),100));
         }
     }
     public boolean addTourToClient(Long tourNumber,Long clientNumber) {
@@ -59,6 +56,10 @@ public class ClientService {
         if(!client.getVaccinations().containsAll(tour.getVaccinations())){
             return false;
         };
+        if (client.getOrders().size() >= 3 ){
+            makeVip(client);
+        }
+
         Order order = new Order(tour);
 
 

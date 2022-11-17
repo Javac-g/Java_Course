@@ -7,7 +7,9 @@ public class VipClient extends Client implements Client_pattern{
     private int discount;
     public VipClient(Client_pattern client, int discount) {
         super(client.getNumber(), client.getFirstName(), client.getMiddleName(), client.getLastName(),client.getIbanNumber(),client.getVaccinations());
+        super.orders = client.getOrders();
         this.discount = discount;
+
     }
 
     public int getDiscount() {

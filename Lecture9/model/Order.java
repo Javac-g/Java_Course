@@ -14,6 +14,7 @@ public class Order {
         open = true;
     }
 
+
     public int getOrderNumber() {
         return OrderNumber;
     }

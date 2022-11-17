@@ -12,13 +12,17 @@ public class Client implements Client_pattern {
     protected String ibanNumber;
 
     protected Set<VACCINATIONS> vaccinations;
-    List<Order> orders = new ArrayList<>();
+    protected List<Order> orders = new ArrayList<>();
 
     public List<Order> getOrders() {
         return orders;
     }
     public int getDiscount(){
         return 1;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     public Client(Long number, String firstName, String middleName, String lastName, String ibanNumber, Set<VACCINATIONS> vaccinations) {
