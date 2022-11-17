@@ -8,7 +8,9 @@ public class ViewHelper {
         System.out.println("1 - Add client");
         System.out.println("2 - Add Tour");
         System.out.println("3 - Add Tour or client");
-        System.out.println("4 - Exit");
+        System.out.println("4 - Delete order");
+        System.out.println("5 - Find tours by client");
+        System.out.println("6 - Exit");
 
     }
     public static String readString(String msg){

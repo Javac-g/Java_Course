@@ -81,7 +81,7 @@ public class ClientService {
 
 
     }
-    public boolean dropNumber(long orderNum){
+    public boolean dropTourByNumber(long orderNum){
         int index = -1;
         for(Client_pattern client:clients){
 

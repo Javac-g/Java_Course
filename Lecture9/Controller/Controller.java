@@ -10,10 +10,7 @@ import Lecture9.model.enums.VACCINATIONS;
 import Lecture9.services.ClientService;
 import Lecture9.services.TourService;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Controller {
     private static final TourService tourService = new TourService();
@@ -59,7 +56,7 @@ public class Controller {
 
             }
             case 2 -> {
-                ViewHelper.printMSG("Enter from Country: " + COUNTRIES.values());
+                ViewHelper.printMSG("Enter from Country: " + Arrays.toString(COUNTRIES.values()));
                 COUNTRIES from = COUNTRIES.valueOf(ViewHelper.readString("Select and type"));
                 COUNTRIES where = COUNTRIES.valueOf(ViewHelper.readString("Select where and type"));
                 int cost = ViewHelper.readNumber("Enter cost: ");
@@ -95,7 +92,12 @@ public class Controller {
                 }
                 yield true;
             }
-            case 4 -> true;
+            case 4 -> {
+                int orderNumber = ViewHelper.readNumber(" client number to delete");
+                clientService.dropTourByNumber(orderNumber);
+
+                yield true;
+            }
             case 5 -> false;
             default -> throw new IllegalArgumentException();
         };
