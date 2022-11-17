@@ -82,7 +82,8 @@ public class Controller {
 
                 clientService.addTourToClient(tourNum,clientNum);
                 Client_pattern client = clientService.findByClientNumber(clientNum);
-                ViewHelper.printMSG("Client: " + client.getFirstName() + " " + client.getMiddleName() );
+                ViewHelper.printMSG("Client: " + client.getFirstName() + " " + client.getMiddleName()
+                + " discount: " + client.getDiscount());
 
                 for (Order order: client.getOrders()){
                     ViewHelper.printMSG("Order: " + order.getOrderNumber() );
