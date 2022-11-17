@@ -17,6 +17,9 @@ public class ClientService {
     public ClientService(TourService tourService) {
         this.tourService = tourService;
     }
+    public List<Client> getClients(){
+        return clients;
+    }
 
     public Client addClient(String firstName, String middleName,
                             String lastName, String ibanNumber,

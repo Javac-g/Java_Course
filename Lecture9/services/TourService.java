@@ -12,7 +12,9 @@ public class TourService {
     private static  final List<Tour> tours = new ArrayList<>();
     private long tourNamber = 0;
 
-
+   public List<Tour> getTours(){
+        return tours;
+    }
     public Tour findTourByNumber(Long number){
         for (Tour tour:tours ){
             if (tour.getNumber().equals(number)){

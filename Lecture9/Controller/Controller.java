@@ -1,6 +1,8 @@
 package Lecture9.Controller;
 
 import Lecture9.View.ViewHelper;
+import Lecture9.model.Client;
+import Lecture9.model.Tour;
 import Lecture9.model.enums.COUNTRIES;
 import Lecture9.model.enums.VACCINATIONS;
 import Lecture9.services.ClientService;
@@ -64,9 +66,21 @@ public class Controller {
                 yield true;
             }
             case 3 ->{
+                ViewHelper.printMSG("Available tours: ");
+                for(Tour tour: tourService.getTours()){
+                    ViewHelper.printMSG(tour.getNumber() + " " + tour.getFrom() + " - " + tour.getWhere());
+                }
+                ViewHelper.printMSG("Available client: ");
+                for (Client client:clientService.getClients()){
+                    ViewHelper.printMSG(client.getNumber() + ": " + client.getFirstName() + " " + client.getLastName());
+                    int clientNum = ViewHelper.readNumber("Enter client number");
+                    int tourNum = ViewHelper.readNumber("Enter tour number");
+
+                }
+               clientService.addTourToClient();
             yield true;
                     }
-            case 4 -> false;
+            case 5 -> false;
             default -> throw new IllegalArgumentException();
         };
         return ans;
