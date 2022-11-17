@@ -15,6 +15,12 @@ public class UniversalPultUkrain implements Pult {
         tv.startTv();
 
     }
+
+    @Override
+    public void a() {
+
+    }
+
     @Override
     public void turnOnWifiStove(){
         WifiStove wifiStove = new WifiStove();

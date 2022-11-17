@@ -8,6 +8,12 @@ public class UniversalPultUSA implements Pult{
         airCond.startAirCond();
 
     }
+
+    @Override
+    public void a() {
+
+    }
+
     @Override
     public void turnOnTv(){
         Tv tv = new Tv();
