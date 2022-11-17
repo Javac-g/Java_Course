@@ -98,8 +98,19 @@ public class Controller {
 
                 yield true;
             }
-            case 5 -> false;
-            default -> throw new IllegalArgumentException();
+            case 5 -> {
+                int clientNumber = ViewHelper.readNumber(" client number to find");
+                List<Order> orders = clientService.findTourByClientNumber(clientNumber);
+                for(Order order : orders){
+                    System.out.println(order);
+                }
+                yield true;
+            }
+            case 6 ->false;
+            default -> throw new IllegalArgumentException("Unknown command");
+
+
+
         };
         return ans;
     }

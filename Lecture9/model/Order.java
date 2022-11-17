@@ -14,6 +14,15 @@ public class Order {
         open = true;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "open=" + open +
+                ", tour=" + tour +
+                ", liked=" + liked +
+                ", OrderNumber=" + OrderNumber +
+                '}';
+    }
 
     public int getOrderNumber() {
         return OrderNumber;

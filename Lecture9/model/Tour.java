@@ -36,6 +36,21 @@ public class Tour {
         this.finalCost = finalCost;
     }
 
+    @Override
+    public String toString() {
+        return "Tour{" +
+                "number=" + number +
+                ", from=" + from +
+                ", where=" + where +
+                ", cost=" + cost +
+                ", finalCost=" + finalCost +
+                ", nutrition=" + nutrition +
+                ", excursion=" + excursion +
+                ", daysAmount=" + daysAmount +
+                ", vaccinations=" + vaccinations +
+                '}';
+    }
+
     public void setNumber(Long number) {
         this.number = number;
     }
