@@ -77,10 +77,14 @@ public class Controller {
 
                     ViewHelper.printMSG(client.getNumber() + ": " + client.getFirstName() + " " + client.getLastName());
                 }
-                long clientNum = ViewHelper.readNumber("Enter client number");
-                long tourNum = ViewHelper.readNumber("Enter tour number");
+                long clientNum = ViewHelper.readNumber(" client number");
+                long tourNum = ViewHelper.readNumber(" tour number");
+                int days = ViewHelper.readNumber(" tour days amount: ");
+                boolean nutrition = ViewHelper.readBoolean("Nutrition");
+                boolean excursion = ViewHelper.readBoolean(" Excursions");
 
-                clientService.addTourToClient(tourNum,clientNum);
+
+                clientService.addTourToClient(tourNum,clientNum,days,nutrition,excursion);
                 Client_pattern client = clientService.findByClientNumber(clientNum);
                 ViewHelper.printMSG("Client: " + client.getFirstName() + " " + client.getMiddleName()
                 + " discount: " + client.getDiscount());

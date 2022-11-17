@@ -49,7 +49,7 @@ public class ClientService {
             clients.set(number,new VipClient(clients.get(number),100));
         }
     }
-    public boolean addTourToClient(Long tourNumber,Long clientNumber) {
+    public boolean addTourToClient(Long tourNumber,Long clientNumber,int daysCount,boolean nutrition,boolean excursion) {
         Client_pattern client = findByClientNumber(clientNumber);
 
         Tour tour = tourService.findTourByNumber(tourNumber);
@@ -59,8 +59,11 @@ public class ClientService {
         if (client.getOrders().size() >= 3 ){
             makeVip(client);
         }
-
-        Order order = new Order(tour);
+        Tour tourClone = tour.clone();
+        tourClone.setDaysAmount((byte)daysCount);
+        tourClone.setNutrition(nutrition);
+        tourClone.setExcursion(excursion);
+        Order order = new Order(tourClone);
 
 
         if (client != null){

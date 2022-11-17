@@ -91,8 +91,15 @@ public class Tour {
         this.vaccinations = vaccinations;
     }
 
-    public int getComminCost(){
-        return -1;
+    public int getFinalCost(){
+
+        int finalprice = this.cost * this.daysAmount;
+
+        finalprice = nutrition ?  finalprice + 200 : finalprice;
+
+        finalprice = excursion ? finalprice + 150 : finalprice;
+
+        return finalprice;
     }
 
     public Tour clone(){

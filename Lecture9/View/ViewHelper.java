@@ -19,6 +19,10 @@ public class ViewHelper {
         System.out.println("Enter " + msg);
         return scanner.nextInt();
     }
+    public static boolean readBoolean(String msg){
+        System.out.println(" Is client have " + msg);
+        return scanner.nextBoolean();
+    }
     public static void printMSG(String msg){
         System.out.println(msg);
     }
