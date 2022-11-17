@@ -4,6 +4,7 @@ import Lecture9.model.*;
 import Lecture9.model.enums.VACCINATIONS;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -80,6 +81,14 @@ public class ClientService {
         }
 
 
+    }
+    public List<Order> findTourByClientNumber(int clientNumber){
+        for(Client_pattern client : clients){
+            if(client.getNumber() == clientNumber){
+                return client.getOrders();
+            }
+        }
+        return new ArrayList<>();
     }
     public boolean dropTourByNumber(long orderNum){
         int index = -1;
