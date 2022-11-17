@@ -6,15 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class Client {
+public class Client implements Client_pattern {
     protected Long number;
     protected String firstName,middleName,lastName;
     protected String ibanNumber;
+
     protected Set<VACCINATIONS> vaccinations;
     List<Order> orders = new ArrayList<>();
 
     public List<Order> getOrders() {
         return orders;
+    }
+    public int getDiscount(){
+        return 1;
     }
 
     public Client(Long number, String firstName, String middleName, String lastName, String ibanNumber, Set<VACCINATIONS> vaccinations) {

@@ -1,15 +1,16 @@
 package Lecture9.model;
 
 import Lecture9.model.enums.VACCINATIONS;
+import java.util.Set;
 
-import java.util.List;
-
-public class VipClient extends Client{
+public class VipClient extends Client implements Client_pattern{
     private int discount;
-    public VipClient(Long number, String firstName, String middleName, String lastName, String ibanNumber, List<VACCINATIONS> vaccinations, int discount) {
-        super(number, firstName, middleName, lastName, ibanNumber, vaccinations);
+    public VipClient(Client_pattern client, int discount) {
+        super(client.getNumber(), client.getFirstName(), client.getMiddleName(), client.getLastName(),client.getIbanNumber(),client.getVaccinations());
         this.discount = discount;
     }
 
-
+    public int getDiscount() {
+        return discount;
+    }
 }
