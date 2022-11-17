@@ -91,7 +91,7 @@ public class Controller {
                 }
                 yield true;
             }
-
+            case 4 -> true;
             case 5 -> false;
             default -> throw new IllegalArgumentException();
         };

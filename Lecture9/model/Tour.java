@@ -3,6 +3,7 @@ package Lecture9.model;
 import Lecture9.model.enums.COUNTRIES;
 import Lecture9.model.enums.VACCINATIONS;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -92,6 +93,14 @@ public class Tour {
 
     public int getComminCost(){
         return -1;
+    }
+
+    public Tour clone(){
+        Set<VACCINATIONS> vaccinations1 = new HashSet<>();
+        vaccinations1.addAll(vaccinations);
+        Tour tour = new Tour(this.number, this.from,
+                            this.where, this.cost, vaccinations1);
+        return tour;
     }
 
 }
