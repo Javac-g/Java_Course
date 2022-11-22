@@ -1,10 +1,10 @@
 package Lecture9.model.enums;
 
-public enum COUNTRIES {
-    UKRAINE,
-    OAE,
-    USA,
-    ITALY,
-    SPAIN
+import java.util.ArrayList;
+import java.util.List;
+
+public class COUNTRIES {
+    private List<String> countries = new ArrayList<>();
+
 
 }

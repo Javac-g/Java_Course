@@ -1,8 +1,7 @@
 package Lecture9.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.List;
 
 public class DBConnector {
 
@@ -11,12 +10,44 @@ public class DBConnector {
     private static final String user = "postgres";
 
     private static final String password = "postgres";
+    private static final String countryNamesQuery = "SELECT name FROM countries";
 
     //Connection statement
-    public static void main(String...args) throws SQLException {
+    public static List<String> getCountriesNames() {
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet res = null;
+        try{
+            con = DriverManager.getConnection(url, user, password);
+            stmt = con.prepareStatement(countryNamesQuery);
+            res = stmt.executeQuery();
 
-        Connection con = DriverManager.getConnection(url,user,password);
-        System.out.println(con);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }if (res != null) {
+                try {
+                    res.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+        }
+
     }
 
 
