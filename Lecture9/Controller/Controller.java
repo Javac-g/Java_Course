@@ -56,9 +56,9 @@ public class Controller {
 
             }
             case 2 -> {
-                ViewHelper.printMSG("Enter from Country: " + Arrays.toString(COUNTRIES.values()));
-                COUNTRIES from = COUNTRIES.valueOf(ViewHelper.readString("Select and type"));
-                COUNTRIES where = COUNTRIES.valueOf(ViewHelper.readString("Select where and type"));
+                ViewHelper.printMSG("Enter from Country: \n" + COUNTRIES.getCountries());
+                String from = ViewHelper.readString("Select and type");
+                String where = ViewHelper.readString("Select where and type");
                 int cost = ViewHelper.readNumber("Enter cost: ");
                 Set<VACCINATIONS> vaccine = chooseVaccinations();
                 tourService.addTour(from,where,cost,vaccine);

@@ -9,15 +9,15 @@ import java.util.Set;
 
 public class Tour {
     private Long number;
-    private COUNTRIES from , where;
+    private String from , where;
     private int cost;
     private int finalCost;
     private boolean nutrition , excursion;
     private byte daysAmount;
     private Set<VACCINATIONS> vaccinations;
 
-    public Tour(Long number, COUNTRIES from,
-                COUNTRIES where, int cost,
+    public Tour(Long number, String from,
+                String where, int cost,
 
                 Set<VACCINATIONS> vaccinations) {
         this.number = number;
@@ -55,19 +55,19 @@ public class Tour {
         this.number = number;
     }
 
-    public COUNTRIES getFrom() {
+    public String getFrom() {
         return from;
     }
 
-    public void setFrom(COUNTRIES from) {
+    public void setFrom(String from) {
         this.from = from;
     }
 
-    public COUNTRIES getWhere() {
+    public String getWhere() {
         return where;
     }
 
-    public void setWhere(COUNTRIES where) {
+    public void setWhere(String where) {
         this.where = where;
     }
 

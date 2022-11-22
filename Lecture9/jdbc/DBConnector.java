@@ -1,6 +1,7 @@
 package Lecture9.jdbc;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBConnector {
@@ -14,6 +15,7 @@ public class DBConnector {
 
     //Connection statement
     public static List<String> getCountriesNames() {
+        List<String>countries = new ArrayList<>();
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet res = null;
@@ -21,6 +23,9 @@ public class DBConnector {
             con = DriverManager.getConnection(url, user, password);
             stmt = con.prepareStatement(countryNamesQuery);
             res = stmt.executeQuery();
+            while (res.next()){
+                countries.add(res.getString(1));
+            }
 
 
         }catch (Exception e){
@@ -47,6 +52,7 @@ public class DBConnector {
             }
 
         }
+        return countries;
 
     }
 

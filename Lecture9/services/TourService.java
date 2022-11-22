@@ -23,8 +23,8 @@ public class TourService {
         }
         return null;
     }
-    public Tour addTour( COUNTRIES from,
-                        COUNTRIES where,
+    public Tour addTour( String from,
+                        String where,
                          int cost,
                          Set<VACCINATIONS> vaccinations){
 
