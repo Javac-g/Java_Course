@@ -15,7 +15,7 @@ import java.util.*;
 public class Controller {
     private static final TourService tourService = new TourService();
     private static final ClientService clientService = new ClientService(tourService);
-
+    String RWT;
     public static void main(String...args){
         while (true){
             ViewHelper.printMenu();
