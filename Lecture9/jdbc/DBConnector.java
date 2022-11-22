@@ -12,13 +12,14 @@ public class DBConnector {
 
     private static final String password = "postgres";
     private static final String countryNamesQuery = "SELECT name FROM countries";
+    private static Connection con = null;
+    private static PreparedStatement stmt = null;
+    private static ResultSet res = null;
+
 
     //Connection statement
     public static List<String> getCountriesNames() {
         List<String>countries = new ArrayList<>();
-        Connection con = null;
-        PreparedStatement stmt = null;
-        ResultSet res = null;
         try{
             con = DriverManager.getConnection(url, user, password);
             stmt = con.prepareStatement(countryNamesQuery);
@@ -53,6 +54,18 @@ public class DBConnector {
 
         }
         return countries;
+
+    }
+
+    public void AddClient(String firstname, String lastname,String middlename,String ibannumber,int discount){
+        try {
+            String addClientQuery = "INSERT INTO clients (firstname, lastname, middlename, ibannumber, discount) VALUES ('"+ firstname+"','"+lastname+"','"+middlename+"','"+discount+"')";
+            con = DriverManager.getConnection(url, user, password);
+            stmt = con.prepareStatement(addClientQuery);
+            res = stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

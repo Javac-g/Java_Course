@@ -6,11 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class COUNTRIES {
-    private COUNTRIES() {
+    private static List<String> countries = new ArrayList<>();
+    static {
         countries.addAll(DBConnector.getCountriesNames());
     }
 
-    private static List<String> countries = new ArrayList<>();
+
 
     public static List<String> getCountries() {
         return countries;
